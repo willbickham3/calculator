@@ -49,7 +49,7 @@ body {
 
 .clear {
     grid-column: 1 / 3;
-    background-color: orange;
+    background-color: rgb(48, 160, 25);
     border: 2px solid black;
     border-radius: 5px;
     font-size: 30px;
@@ -57,9 +57,14 @@ body {
 
 .delete {
     grid-column: 3 / 5;
-    background-color: red;
+    background-color: rgb(44, 163, 143);
     border: 2px solid black;
     border-radius: 5px;
     font-size: 30px;
 
+}
+.operand, .operator {
+    border: 2px solid black;
+    border-radius: 5px;
+    font-size: 30px;
 }
