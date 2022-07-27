@@ -5,7 +5,7 @@ const operator = document.querySelectorAll('.operator');
 const clearBtn = document.querySelector('.clear');
 const deleteBtn = document.querySelector('.delete');
 
-let symbol = "*";
+let symbol = "÷";
 let a = 3;
 let b = 3;
 
@@ -25,6 +25,13 @@ function divide(a, b) {
     result = a / b;
     console.log(result)
 }
+function clearDisplay() {
+    previousOperand.innerText = "";
+    currentOperand.innerText = "";
+    symbol = "";
+    return
+}
+
 
 function operate(symbol, a, b) {
     if (symbol == "+") {
@@ -46,3 +53,5 @@ function operate(symbol, a, b) {
         return console.log("error");
     }
 }
+
+clearBtn.addEventListener('click', clearDisplay)
