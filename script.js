@@ -4,6 +4,7 @@ const operand = document.querySelectorAll('.operand');
 const operator = document.querySelectorAll('.operator');
 const clearBtn = document.querySelector('.clear');
 const deleteBtn = document.querySelector('.delete');
+const equalsBtn = document.querySelector('.equals');
 
 let symbol = "÷";
 let a = 3;
