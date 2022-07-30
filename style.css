@@ -63,7 +63,7 @@ body {
     font-size: 30px;
 
 }
-.operand, .operator {
+.operand, .operator, .equals {
     border: 2px solid black;
     border-radius: 5px;
     font-size: 30px;
