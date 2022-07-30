@@ -56,3 +56,6 @@ function operate(symbol, a, b) {
 }
 
 clearBtn.addEventListener('click', clearDisplay)
+equalsBtn.addEventListener('click', function() {
+    operate(symbol, a, b)
+})
