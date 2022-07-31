@@ -11,22 +11,22 @@ let a;
 let b;
 
 function add(a, b) {
-    result = a + b;
+    result = parseFloat(a + b)
     currentOperand.textContent = result
 }
 
 function subtract(a, b) {
-    result = a - b;
+    result = parseFloat(a - b);
     currentOperand.textContent = result
 }
 
 function multiply(a, b) {
-    result = a * b;
+    result = parseFloat(a * b);
     currentOperand.textContent = result
 }
 
 function divide(a, b) {
-    result = a / b;
+    result = parseFloat(a / b);
     currentOperand.textContent = result
 }
 
@@ -35,6 +35,7 @@ function clearDisplay() {
     previousOperand.innerText = "";
     currentOperand.innerText = "";
     symbol = "";
+    result = undefined;
     return
 }
 
@@ -68,6 +69,7 @@ function operate(symbol, a, b) {
 // event listeners for buttons
 operand.forEach(button => {
     button.addEventListener('click', () => {
+        if (button.textContent === '.' && currentOperand.textContent.includes('.')) return
         if (previousOperand.textContent == "") {
         currentOperand.textContent += button.textContent;
         a = Number(currentOperand.textContent);
@@ -80,6 +82,10 @@ operand.forEach(button => {
 })
 operator.forEach(button => {
     button.addEventListener('click', () => {
+        if (previousOperand.textContent !== '') {
+            operate(symbol, a, b)
+            a = result;
+        }
         symbol = button.textContent;
         previousOperand.textContent = `${Number(a)} ${symbol}`;
         currentOperand.textContent = ''; 
