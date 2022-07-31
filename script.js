@@ -6,26 +6,31 @@ const clearBtn = document.querySelector('.clear');
 const deleteBtn = document.querySelector('.delete');
 const equalsBtn = document.querySelector('.equals');
 
-let symbol = "÷";
-let a = 3;
-let b = 3;
+let symbol;
+let a;
+let b;
 
 function add(a, b) {
     result = a + b;
-    console.log(result)}
+    currentOperand.textContent = result
+}
 
 function subtract(a, b) {
     result = a - b;
-    console.log(result)}
+    currentOperand.textContent = result
+}
 
 function multiply(a, b) {
     result = a * b;
-    console.log(result)}
+    currentOperand.textContent = result
+}
 
 function divide(a, b) {
     result = a / b;
-    console.log(result)
+    currentOperand.textContent = result
 }
+
+
 function clearDisplay() {
     previousOperand.innerText = "";
     currentOperand.innerText = "";
@@ -55,7 +60,29 @@ function operate(symbol, a, b) {
     }
 }
 
+
+// event listeners for buttons
+operand.forEach(button => {
+    button.addEventListener('click', () => {
+        if (previousOperand.textContent == "") {
+        currentOperand.textContent += button.textContent;
+        a = Number(currentOperand.textContent);
+    }
+        else {
+            currentOperand.textContent += button.textContent;
+            b = Number(currentOperand.textContent)
+        }
+    })
+})
+operator.forEach(button => {
+    button.addEventListener('click', () => {
+        symbol = button.textContent;
+        previousOperand.textContent = `${Number(a)} ${symbol}`;
+        currentOperand.textContent = ''; 
+} )})
+
 clearBtn.addEventListener('click', clearDisplay)
 equalsBtn.addEventListener('click', function() {
-    operate(symbol, a, b)
+    operate(symbol, a, b);
+    a = result;
 })
