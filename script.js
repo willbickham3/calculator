@@ -52,8 +52,12 @@ function operate(symbol, a, b) {
         multiply(a, b)
         return
 }   else if (symbol == "÷") {
+        if (b === 0) {
+            currentOperand.innerText = "I don't think so!"
+        }
+        else {
         divide(a, b)
-        return
+        return}
 }
     else {
         return console.log("error");
