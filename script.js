@@ -39,6 +39,9 @@ function clearDisplay() {
     return
 }
 
+function deleteNum() {
+    currentOperand.textContent = currentOperand.textContent.toString().slice(0, -1)
+}
 
 function operate(symbol, a, b) {
     if (symbol == "+") {
@@ -96,3 +99,5 @@ equalsBtn.addEventListener('click', function() {
     operate(symbol, a, b);
     a = result;
 })
+
+deleteBtn.addEventListener('click', deleteNum)
