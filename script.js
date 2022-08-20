@@ -41,6 +41,7 @@ function clearDisplay() {
 
 function deleteNum() {
     currentOperand.textContent = currentOperand.textContent.toString().slice(0, -1)
+    a = Number(currentOperand.textContent);
 }
 
 function operate(symbol, a, b) {
@@ -98,6 +99,7 @@ clearBtn.addEventListener('click', clearDisplay)
 equalsBtn.addEventListener('click', function() {
     operate(symbol, a, b);
     a = result;
+    b = '';
 })
 
 deleteBtn.addEventListener('click', deleteNum)
