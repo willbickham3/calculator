@@ -89,6 +89,8 @@ operator.forEach(button => {
         if (previousOperand.textContent !== '') {
             operate(symbol, a, b)
             a = result;
+            previousOperand.textContent = `${Number(a)} ${symbol}`;
+
         }
         symbol = button.textContent;
         previousOperand.textContent = `${Number(a)} ${symbol}`;
