@@ -98,6 +98,7 @@ operator.forEach(button => {
 clearBtn.addEventListener('click', clearDisplay)
 equalsBtn.addEventListener('click', function() {
     operate(symbol, a, b);
+    previousOperand.textContent = `${Number(a)} ${symbol} ${Number(b)}`;
     a = result;
     b = '';
 })
