@@ -57,7 +57,7 @@ function operate(symbol, a, b) {
         multiply(a, b)
         return
 }   else if (symbol == "÷") {
-        if (b === 0) {
+        if (b === NaN || b === Infinity) {
             currentOperand.innerText = "I don't think so!"
         }
         else {
