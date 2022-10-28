@@ -57,7 +57,7 @@ function operate(symbol, a, b) {
         multiply(a, b)
         return
 }   else if (symbol == "÷") {
-        if (b === NaN || b === Infinity) {
+        if (b === NaN || b === Infinity || b === 0) {
             currentOperand.innerText = "I don't think so!"
         }
         else {
@@ -86,7 +86,7 @@ operand.forEach(button => {
 })
 operator.forEach(button => {
     button.addEventListener('click', () => {
-        if (previousOperand.textContent !== '') {
+        if (previousOperand.textContent !== '' && b !== '') {
             operate(symbol, a, b)
             a = result;
             previousOperand.textContent = `${Number(a)} ${symbol}`;
