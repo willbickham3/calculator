@@ -41,7 +41,7 @@ function clearDisplay() {
 
 function deleteNum() {
     currentOperand.textContent = currentOperand.textContent.toString().slice(0, -1)
-    b = Number(currentOperand.textContent);
+    a = Number(currentOperand.textContent);
 }
 
 function operate(symbol, a, b) {
